@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using System.Linq;
 
+/// <summary>
+/// 0=vide
+/// 1=salle
+/// 2=margin
+/// </summary>
 public class DungeonGenerator : MonoBehaviour
 {
     [SerializeField]
     private int dungeonWidth;
     [SerializeField]
     private int dungeonHeigth;
+    [SerializeField]
+    private int hallwayWidth;
     [SerializeField]
     private RoomType[] roomsToPlace;
 
@@ -20,8 +26,9 @@ public class DungeonGenerator : MonoBehaviour
 
     private int[,] grid;
     private List<DungeonRoom> rooms;
-    private List<GameObject> roomsInstances = new List<GameObject>();
     private List<RoomType> roomsToPlaceList;
+    private List<DungeonRoom> roomsToClear;
+    private HallwayGenerator hallwayGenerator = new HallwayGenerator();
 
     private readonly string DefaultRoom = "DefaultRoom";
     private readonly string DefaultRoomE = "DefaultRoomE";
@@ -40,6 +47,12 @@ public class DungeonGenerator : MonoBehaviour
 
     private static System.Random rand = new System.Random();
 
+    public int[,] Grid
+    {
+        get => grid;
+        set => grid = value;
+    }
+
     void Start()
     {
         Generate();
@@ -51,9 +64,16 @@ public class DungeonGenerator : MonoBehaviour
         grid = new int[dungeonHeigth, dungeonWidth];
         rooms = new List<DungeonRoom>();
         roomsToPlaceList = new List<RoomType>(roomsToPlace);
+        roomsToClear = new List<DungeonRoom>();
         InstantiateRoom(new DungeonRoom(new Vector2Int(41, 45), StartRoomSize, StartRoom));
 
         PlaceRooms();
+
+        foreach (var i in rooms)
+        {
+            hallwayGenerator.GeneratePath(grid, rooms, i);
+        }
+
         PrintGrid();
     }
 
@@ -68,6 +88,7 @@ public class DungeonGenerator : MonoBehaviour
                 PlaceRoom(new DungeonRoom(new Vector2Int(0, 0), DefaultRoomSize, DefaultRoom));
             }
         }
+        roomsToClear.Clear();
     }
 
     bool PlaceRoom(DungeonRoom room)
@@ -82,6 +103,7 @@ public class DungeonGenerator : MonoBehaviour
                 return true;
             }
         }
+        roomsToClear.Add(room);
         return false;
     }
 
@@ -98,7 +120,7 @@ public class DungeonGenerator : MonoBehaviour
             {
                 if (i < dungeonHeigth && j < dungeonWidth)
                 {
-                    if (grid[i, j] == 1)
+                    if (grid[i, j] != 0)
                     {
                         return false;
                     }
@@ -113,6 +135,8 @@ public class DungeonGenerator : MonoBehaviour
     {
         try
         {
+            AddMargin(room);
+
             for (int i = room.Position.y; i < room.Position.y + room.Size.y; i++)
             {
                 for (int j = room.Position.x; j < room.Position.x + room.Size.x; j++)
@@ -127,7 +151,7 @@ public class DungeonGenerator : MonoBehaviour
         catch (System.Exception e)
         {
             Debug.Log("Invalid room!");
-            Debug.Log(e.StackTrace);
+            Debug.Log(e.Message + e.StackTrace);
         }
     }
 
@@ -172,9 +196,123 @@ public class DungeonGenerator : MonoBehaviour
         return new Vector3(gridPosition.x, dungeonHeigth - gridPosition.y);
     }
 
-    Vector2Int GetRandomGridLocation()
+    #region CANCER
+    void AddMargin(DungeonRoom room)
     {
-        var rand = new System.Random();
-        return new Vector2Int(rand.Next(0, 100), rand.Next(0, 100));
+        for (int i = room.Position.y; i < room.Position.y + room.Size.y; i++)
+        {
+            for (int j = room.Position.x; j >= room.Position.x - hallwayWidth; j--)
+            {
+                if (j < 0)
+                {
+                    break;
+                }
+
+                if (i < dungeonHeigth && j < dungeonWidth)
+                {
+                    grid[i, j] = 2;
+                }
+            }
+        }
+        for (int i = room.Position.y; i < room.Position.y + room.Size.y; i++)
+        {
+            for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + hallwayWidth; j++)
+            {
+                if (j >= dungeonWidth)
+                {
+                    break;
+                }
+
+                if (i < dungeonHeigth && j < dungeonWidth)
+                {
+                    grid[i, j] = 2;
+                }
+            }
+        }
+        for (int i = room.Position.y; i >= room.Position.y - hallwayWidth; i--)
+        {
+            for (int j = room.Position.x; j < room.Position.x + room.Size.x; j++)
+            {
+                if (i < 0)
+                {
+                    break;
+                }
+
+                if (i < dungeonHeigth && j < dungeonWidth)
+                {
+                    grid[i, j] = 2;
+                }
+            }
+        }
+        for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + hallwayWidth; i++)
+        {
+            for (int j = room.Position.x; j < room.Position.x + room.Size.x; j++)
+            {
+                if (i >= dungeonHeigth)
+                {
+                    break;
+                }
+
+                if (i < dungeonHeigth && j < dungeonWidth)
+                {
+                    grid[i, j] = 2;
+                }
+            }
+        }
+
+
+        if (room.Position.x >= hallwayWidth && room.Position.y >= hallwayWidth)
+        {
+            for (int i = room.Position.y - hallwayWidth; i < room.Position.y; i++)
+            {
+                for (int j = room.Position.x - hallwayWidth; j < room.Position.x; j++)
+                {
+                    if (i < dungeonHeigth && j < dungeonWidth)
+                    {
+                        grid[i, j] = 2;
+                    }
+                }
+            }
+        }
+        if (room.Position.x < dungeonWidth - hallwayWidth && room.Position.y >= hallwayWidth)
+        {
+            for (int i = room.Position.y - hallwayWidth; i < room.Position.y; i++)
+            {
+                for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + hallwayWidth; j++)
+                {
+                    if (i < dungeonHeigth && j < dungeonWidth)
+                    {
+                        grid[i, j] = 2;
+                    }
+                }
+            }
+        }
+        if (room.Position.x < dungeonWidth - hallwayWidth && room.Position.y < dungeonHeigth - hallwayWidth)
+        {
+            for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + hallwayWidth; i++)
+            {
+                for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + hallwayWidth; j++)
+                {
+                    if (i < dungeonHeigth && j < dungeonWidth)
+                    {
+                        grid[i, j] = 2;
+                    }
+                }
+            }
+        }
+        if (room.Position.x >= hallwayWidth && room.Position.y < dungeonHeigth - hallwayWidth)
+        {
+            for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + hallwayWidth; i++)
+            {
+                for (int j = room.Position.x - hallwayWidth; j < room.Position.x; j++)
+                {
+                    if (i < dungeonHeigth && j < dungeonWidth)
+                    {
+                        grid[i, j] = 2;
+                    }
+                }
+            }
+        }
     }
+    #endregion
 }
