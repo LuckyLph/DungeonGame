@@ -1,0 +1,1716 @@
+fileFormatVersion: 2
+guid: 85b4ca1275e9fb34abbad200b8c6031b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7416052728493912227
+    second: Character 5 Side_0
+  - first:
+      213: 6042246051758862456
+    second: Character 5 Side_1
+  - first:
+      213: -8565117737411848737
+    second: Character 5 Side_2
+  - first:
+      213: -1579743094670344519
+    second: Character 5 Side_3
+  - first:
+      213: 3615685031147808621
+    second: Character 5 Side_4
+  - first:
+      213: -4394574768324305976
+    second: Character 5 Side_5
+  - first:
+      213: 8181756352200867370
+    second: Character 5 Side_6
+  - first:
+      213: -2140799445259370089
+    second: Character 5 Side_7
+  - first:
+      213: -7229269529778722343
+    second: Character 5 Side_8
+  - first:
+      213: 7920522961864069549
+    second: Character 5 Side_9
+  - first:
+      213: 769410954431545947
+    second: Character 5 Side_10
+  - first:
+      213: -9109649011283955771
+    second: Character 5 Side_11
+  - first:
+      213: 7487266641921607895
+    second: Character 5 Side_12
+  - first:
+      213: -5643344997171752323
+    second: Character 5 Side_13
+  - first:
+      213: -8017226412654502636
+    second: Character 5 Side_14
+  - first:
+      213: 5481017727812173204
+    second: Character 5 Side_15
+  - first:
+      213: 1167440317170223597
+    second: Character 5 Side_16
+  - first:
+      213: 8764988557279700666
+    second: Character 5 Side_17
+  - first:
+      213: 8209943705795135616
+    second: Character 5 Side_18
+  - first:
+      213: -309679937454954566
+    second: Character 5 Side_19
+  - first:
+      213: -5111276051068524414
+    second: Character 5 Side_20
+  - first:
+      213: -459977628781913283
+    second: Character 5 Side_21
+  - first:
+      213: -6147503909392327356
+    second: Character 5 Side_22
+  - first:
+      213: -3349481583188735037
+    second: Character 5 Side_23
+  - first:
+      213: -2624440846631799763
+    second: Character 5 Side_24
+  - first:
+      213: -3121309703991722329
+    second: Character 5 Side_25
+  - first:
+      213: -1923408281781270498
+    second: Character 5 Side_26
+  - first:
+      213: -1618712439831431241
+    second: Character 5 Side_27
+  - first:
+      213: -7030246377047875046
+    second: Character 5 Side_28
+  - first:
+      213: -604080531359601427
+    second: Character 5 Side_29
+  - first:
+      213: 1728803322483835106
+    second: Character 5 Side_30
+  - first:
+      213: -4916423147516123951
+    second: Character 5 Side_31
+  - first:
+      213: 35798834067107280
+    second: Character 5 Side_32
+  - first:
+      213: -666264226142903485
+    second: Character 5 Side_33
+  - first:
+      213: 7568324249953959200
+    second: Character 5 Side_34
+  - first:
+      213: -7785492021704863676
+    second: Character 5 Side_35
+  - first:
+      213: -3689663481049417025
+    second: Character 5 Side_36
+  - first:
+      213: -4951418128524185888
+    second: Character 5 Side_37
+  - first:
+      213: 9015935661497540715
+    second: Character 5 Side_38
+  - first:
+      213: -6815845281770908979
+    second: Character 5 Side_39
+  - first:
+      213: 3326923353547406461
+    second: Character 5 Side_40
+  - first:
+      213: -4140953537315622868
+    second: Character 5 Side_41
+  - first:
+      213: -2920744175618842522
+    second: Character 5 Side_42
+  - first:
+      213: 6953788659982600137
+    second: Character 5 Side_43
+  - first:
+      213: -2073531876185131647
+    second: Character 5 Side_44
+  - first:
+      213: -3881443918555616721
+    second: Character 5 Side_45
+  - first:
+      213: -2019630766736841552
+    second: Character 5 Side_46
+  - first:
+      213: -4540466227989633925
+    second: Character 5 Side_47
+  - first:
+      213: 5109709229279592801
+    second: Character 5 Side_48
+  - first:
+      213: 6732267414305226080
+    second: Character 5 Side_49
+  - first:
+      213: 3975306726293282492
+    second: Character 5 Side_50
+  - first:
+      213: -7191215732546925486
+    second: Character 5 Side_51
+  - first:
+      213: -3711381360578481471
+    second: Character 5 Side_52
+  - first:
+      213: 7135263887959136667
+    second: Character 5 Side_53
+  - first:
+      213: 8952079580343231586
+    second: Character 5 Side_54
+  - first:
+      213: -6143637955421932548
+    second: Character 5 Side_55
+  - first:
+      213: 9223191267501262601
+    second: Character 5 Side_56
+  - first:
+      213: 9136025678454920690
+    second: Character 5 Side_57
+  - first:
+      213: -8569634404177069414
+    second: Character 5 Side_58
+  - first:
+      213: 480364268584092760
+    second: Character 5 Side_59
+  - first:
+      213: -7177134365705718950
+    second: Character 5 Side_60
+  - first:
+      213: -4133497943764639246
+    second: Character 5 Side_61
+  - first:
+      213: 1162927548565979814
+    second: Character 5 Side_62
+  - first:
+      213: 5216644287230342710
+    second: Character 5 Side_63
+  - first:
+      213: 5460194103393330808
+    second: Character 5 Side_64
+  - first:
+      213: 9036461855310088812
+    second: Character 5 Side_65
+  - first:
+      213: 2526379791073993509
+    second: Character 5 Side_66
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Character 5 Side_0
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1884
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a032752aac1be660800000000000000
+      internalID: 7416052728493912227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_1
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1884
+        width: 52
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870f79855ce5ad350800000000000000
+      internalID: 6042246051758862456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_2
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 1884
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd55b2a3cc6922980800000000000000
+      internalID: -8565117737411848737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_3
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1884
+        width: 58
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be3cc57600a31ae0800000000000000
+      internalID: -1579743094670344519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_4
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 1884
+        width: 58
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67234d016e7d2230800000000000000
+      internalID: 3615685031147808621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_5
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 1884
+        width: 57
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb922b18855303c0800000000000000
+      internalID: -4394574768324305976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_6
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1884
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e7ab3bd007b8170800000000000000
+      internalID: 8181756352200867370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_7
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 1884
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79146f93f3a5a42e0800000000000000
+      internalID: -2140799445259370089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_8
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1629
+        width: 56
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9ebfb3aa97cab90800000000000000
+      internalID: -7229269529778722343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_9
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1628
+        width: 56
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da19b394ba95bed60800000000000000
+      internalID: 7920522961864069549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_10
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1628
+        width: 66
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52cf21cf2f7daa00800000000000000
+      internalID: 769410954431545947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_11
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1628
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf6eed3d76049180800000000000000
+      internalID: -9109649011283955771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_12
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 1627
+        width: 58
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d88e52775d18e760800000000000000
+      internalID: 7487266641921607895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_13
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 1628
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d729992ff9fcea1b0800000000000000
+      internalID: -5643344997171752323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_14
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 1627
+        width: 53
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41d59d50e071db090800000000000000
+      internalID: -8017226412654502636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_15
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 1627
+        width: 68
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dfcd1759c701c40800000000000000
+      internalID: 5481017727812173204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_16
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1376
+        width: 60
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9866978c4933010800000000000000
+      internalID: 1167440317170223597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_17
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1389
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6250967ae73a970800000000000000
+      internalID: 8764988557279700666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_18
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1400
+        width: 110
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0888fd16d449fe170800000000000000
+      internalID: 8209943705795135616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_19
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1372
+        width: 104
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7aee5dcbbc3bbf0800000000000000
+      internalID: -309679937454954566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_20
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 1366
+        width: 110
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288691323891119b0800000000000000
+      internalID: -5111276051068524414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_21
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 1365
+        width: 111
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bd3df98c4dd99f0800000000000000
+      internalID: -459977628781913283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_22
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 1409
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d5859e3cdafaaa0800000000000000
+      internalID: -6147503909392327356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_23
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1372
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb82541f304481d0800000000000000
+      internalID: -3349481583188735037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_24
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 1381
+        width: 52
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d247c7274fc149bd0800000000000000
+      internalID: -2624440846631799763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_25
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1125
+        width: 52
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aef7939c51eea4d0800000000000000
+      internalID: -3121309703991722329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_26
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1119
+        width: 51
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18026ebb5eae45e0800000000000000
+      internalID: -1923408281781270498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_27
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1188
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7775ebc9d2989e0800000000000000
+      internalID: -1618712439831431241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_28
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1116
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12a59cfa2c8f6e90800000000000000
+      internalID: -7030246377047875046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_29
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1116
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dece49015ffdd97f0800000000000000
+      internalID: -604080531359601427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_30
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1116
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e00a235671fdf710800000000000000
+      internalID: 1728803322483835106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_31
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1188
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d42bc6123b55cbb0800000000000000
+      internalID: -4916423147516123951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_32
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 1116
+        width: 49
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd61f399de2f7000800000000000000
+      internalID: 35798834067107280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_33
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 1116
+        width: 50
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343a3326734f0c6f0800000000000000
+      internalID: -666264226142903485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_34
+      rect:
+        serializedVersion: 2
+        x: 1895
+        y: 1116
+        width: 50
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dfa7f7ec6180960800000000000000
+      internalID: 7568324249953959200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_35
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 1188
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440d4ac614064f390800000000000000
+      internalID: -7785492021704863676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_36
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 860
+        width: 50
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba7157dc9eabccc0800000000000000
+      internalID: -3689663481049417025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_37
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 860
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eee2e22277094bb0800000000000000
+      internalID: -4951418128524185888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_38
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 932
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60665537b90f1d70800000000000000
+      internalID: 9015935661497540715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_39
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 860
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2d50004d04961a0800000000000000
+      internalID: -6815845281770908979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_40
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 860
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7cf42bc92b9b2e20800000000000000
+      internalID: 3326923353547406461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_41
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 860
+        width: 62
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20b7e092b06886c0800000000000000
+      internalID: -4140953537315622868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_42
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 860
+        width: 58
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660a274a5ae6777d0800000000000000
+      internalID: -2920744175618842522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_43
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 860
+        width: 51
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7076981f1d08060800000000000000
+      internalID: 6953788659982600137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_44
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 932
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1853981aeb55933e0800000000000000
+      internalID: -2073531876185131647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_45
+      rect:
+        serializedVersion: 2
+        x: 1897
+        y: 874
+        width: 55
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a64e22257522ac0800000000000000
+      internalID: -3881443918555616721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_46
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 619
+        width: 57
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b46333a484d8f3e0800000000000000
+      internalID: -2019630766736841552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_47
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 615
+        width: 55
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b742506a5060df0c0800000000000000
+      internalID: -4540466227989633925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_48
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 609
+        width: 55
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161cebcb87559e640800000000000000
+      internalID: 5109709229279592801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_49
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 607
+        width: 55
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06db9925b81dd6d50800000000000000
+      internalID: 6732267414305226080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_50
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 612
+        width: 55
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe9eedc7602b2730800000000000000
+      internalID: 3975306726293282492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_51
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 619
+        width: 60
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c0756546ba33c90800000000000000
+      internalID: -7191215732546925486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_52
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 619
+        width: 57
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c2b6b8f0568e7cc0800000000000000
+      internalID: -3711381360578481471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_53
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 610
+        width: 55
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b991a7ca3bc850360800000000000000
+      internalID: 7135263887959136667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_54
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 357
+        width: 55
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264e26bb2fc2c3c70800000000000000
+      internalID: 8952079580343231586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_55
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 348
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3f77674d96dbaa0800000000000000
+      internalID: -6143637955421932548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_56
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 349
+        width: 54
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907c5ea579b5fff70800000000000000
+      internalID: 9223191267501262601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_57
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 348
+        width: 54
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5172723fea9ce70800000000000000
+      internalID: 9136025678454920690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_58
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 325
+        width: 108
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a3f0cc9ea821980800000000000000
+      internalID: -8569634404177069414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_59
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 320
+        width: 108
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854ceb7d1c89aa600800000000000000
+      internalID: 480364268584092760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_60
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 326
+        width: 54
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53bcda0252b56c90800000000000000
+      internalID: -7177134365705718950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_61
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 348
+        width: 50
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1e916358dd2a6c0800000000000000
+      internalID: -4133497943764639246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_62
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 93
+        width: 106
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a28ac7a17c832010800000000000000
+      internalID: 1162927548565979814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_63
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 92
+        width: 106
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6367feb175e356840800000000000000
+      internalID: 5216644287230342710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_64
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 92
+        width: 134
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87621719b9186cb40800000000000000
+      internalID: 5460194103393330808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_65
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 92
+        width: 133
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a00202e26f76d70800000000000000
+      internalID: 9036461855310088812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character 5 Side_66
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 91
+        width: 106
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523e0bed8018f0320800000000000000
+      internalID: 2526379791073993509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

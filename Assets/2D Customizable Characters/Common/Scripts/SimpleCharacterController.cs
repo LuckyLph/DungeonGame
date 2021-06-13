@@ -46,8 +46,6 @@ public class SimpleCharacterController : MonoBehaviour {
         speed = rb.velocity.magnitude;
 
         // Find out which direction to face and do what is appropiate
-        //
-
         // Only update angle of direction if input axises are pressed
         if (!(axisVector.x == 0 && axisVector.y == 0))
         {

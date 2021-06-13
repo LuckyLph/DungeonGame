@@ -162,6 +162,10 @@ namespace Pathfinding {
 		/// <summary>Helper which calculates points along the current path</summary>
 		protected PathInterpolator interpolator = new PathInterpolator();
 
+		// Controller Stuff
+		public bool IsEnabled { get; set; }
+
+
 		#region IAstarAI implementation
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::Teleport</summary>
@@ -250,7 +254,23 @@ namespace Pathfinding {
 			interpolator.GetRemainingPath(buffer);
 		}
 
-		protected override void OnDisable () {
+        protected override void Update()
+        {
+			if (IsEnabled)
+            {
+				base.Update();
+			}        
+        }
+
+        protected override void FixedUpdate()
+        {
+			if (IsEnabled)
+            {
+				base.FixedUpdate();
+			}
+        }
+
+        protected override void OnDisable () {
 			base.OnDisable();
 
 			// Release current path so that it can be pooled

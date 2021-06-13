@@ -6,6 +6,8 @@ namespace Pathfinding {
 	using Pathfinding.RVO;
 	using Pathfinding.Util;
 
+	public delegate void AIMovementHandler(Vector3 movement);
+
 	/// <summary>
 	/// Base class for AIPath and RichAI.
 	/// This class holds various methods and fields that are common to both AIPath and RichAI.
@@ -15,7 +17,10 @@ namespace Pathfinding {
 	/// See: <see cref="Pathfinding.IAstarAI"/> (all movement scripts implement this interface)
 	/// </summary>
 	[RequireComponent(typeof(Seeker))]
-	public abstract class AIBase : VersionedMonoBehaviour {
+	public abstract class AIBase : VersionedMonoBehaviour
+	{
+		public event AIMovementHandler OnAIMove;
+
 		/// <summary>\copydoc Pathfinding::IAstarAI::radius</summary>
 		public float radius = 0.5f;
 
@@ -321,6 +326,19 @@ namespace Pathfinding {
 			Init();
 		}
 
+		protected virtual void OnDisable()
+		{
+			ClearPath();
+
+			// Make sure we no longer receive callbacks when paths complete
+			seeker.pathCallback -= OnPathComplete;
+
+			velocity2D = Vector3.zero;
+			accumulatedMovementDelta = Vector3.zero;
+			verticalVelocity = 0f;
+			lastDeltaTime = 0;
+		}
+
 		/// <summary>
 		/// Starts searching for paths.
 		/// If you override this method you should in most cases call base.Start () at the start of it.
@@ -329,6 +347,42 @@ namespace Pathfinding {
 		protected virtual void Start () {
 			startHasRun = true;
 			Init();
+		}
+
+		/// <summary>
+		/// Called every frame.
+		/// If no rigidbodies are used then all movement happens here.
+		/// </summary>
+		protected virtual void Update()
+		{
+			if (shouldRecalculatePath) SearchPath();
+
+			// If gravity is used depends on a lot of things.
+			// For example when a non-kinematic rigidbody is used then the rigidbody will apply the gravity itself
+			// Note that the gravity can contain NaN's, which is why the comparison uses !(a==b) instead of just a!=b.
+			usingGravity = !(gravity == Vector3.zero) && (!updatePosition || ((rigid == null || rigid.isKinematic) && (rigid2D == null || rigid2D.isKinematic)));
+			if (rigid == null && rigid2D == null && canMove)
+			{
+				Vector3 nextPosition;
+				Quaternion nextRotation;
+				MovementUpdate(Time.deltaTime, out nextPosition, out nextRotation);
+				FinalizeMovement(nextPosition, nextRotation);
+			}
+		}
+
+		/// <summary>
+		/// Called every physics update.
+		/// If rigidbodies are used then all movement happens here.
+		/// </summary>
+		protected virtual void FixedUpdate()
+		{
+			if (!(rigid == null && rigid2D == null) && canMove)
+			{
+				Vector3 nextPosition;
+				Quaternion nextRotation;
+				MovementUpdate(Time.fixedDeltaTime, out nextPosition, out nextRotation);
+				FinalizeMovement(nextPosition, nextRotation);
+			}
 		}
 
 		void Init () {
@@ -353,50 +407,6 @@ namespace Pathfinding {
 			waitingForPathCalculation = false;
 			// Abort calculation of the current path
 			if (seeker != null) seeker.CancelCurrentPathRequest();
-		}
-
-		protected virtual void OnDisable () {
-			ClearPath();
-
-			// Make sure we no longer receive callbacks when paths complete
-			seeker.pathCallback -= OnPathComplete;
-
-			velocity2D = Vector3.zero;
-			accumulatedMovementDelta = Vector3.zero;
-			verticalVelocity = 0f;
-			lastDeltaTime = 0;
-		}
-
-		/// <summary>
-		/// Called every frame.
-		/// If no rigidbodies are used then all movement happens here.
-		/// </summary>
-		protected virtual void Update () {
-			if (shouldRecalculatePath) SearchPath();
-
-			// If gravity is used depends on a lot of things.
-			// For example when a non-kinematic rigidbody is used then the rigidbody will apply the gravity itself
-			// Note that the gravity can contain NaN's, which is why the comparison uses !(a==b) instead of just a!=b.
-			usingGravity = !(gravity == Vector3.zero) && (!updatePosition || ((rigid == null || rigid.isKinematic) && (rigid2D == null || rigid2D.isKinematic)));
-			if (rigid == null && rigid2D == null && canMove) {
-				Vector3 nextPosition;
-				Quaternion nextRotation;
-				MovementUpdate(Time.deltaTime, out nextPosition, out nextRotation);
-				FinalizeMovement(nextPosition, nextRotation);
-			}
-		}
-
-		/// <summary>
-		/// Called every physics update.
-		/// If rigidbodies are used then all movement happens here.
-		/// </summary>
-		protected virtual void FixedUpdate () {
-			if (!(rigid == null && rigid2D == null) && canMove) {
-				Vector3 nextPosition;
-				Quaternion nextRotation;
-				MovementUpdate(Time.fixedDeltaTime, out nextPosition, out nextRotation);
-				FinalizeMovement(nextPosition, nextRotation);
-			}
 		}
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::MovementUpdate</summary>
@@ -586,12 +596,13 @@ namespace Pathfinding {
 			// Use a local variable, it is significantly faster
 			Vector3 currentPosition = simulatedPosition;
 			bool positionDirty1 = false;
+			Vector3 movement = (nextPosition - currentPosition) + accumulatedMovementDelta;
 
 			if (controller != null && controller.enabled && updatePosition) {
 				// Use CharacterController
 				// The Transform may not be at #position if it was outside the navmesh and had to be moved to the closest valid position
-				tr.position = currentPosition;
-				controller.Move((nextPosition - currentPosition) + accumulatedMovementDelta);
+				tr.position = currentPosition;	
+				controller.Move(movement);
 				// Grab the position after the movement to be able to take physics into account
 				// TODO: Add this into the clampedPosition calculation below to make RVO better respond to physics
 				currentPosition = tr.position;
@@ -623,6 +634,8 @@ namespace Pathfinding {
 			accumulatedMovementDelta = Vector3.zero;
 			simulatedPosition = currentPosition;
 			UpdateVelocity();
+
+			if (OnAIMove != null) OnAIMove(movement);
 		}
 
 		protected void UpdateVelocity () {
