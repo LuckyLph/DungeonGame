@@ -253,7 +253,7 @@ namespace Pathfinding.Legacy {
 			Quaternion rot = tr.rotation;
 			Quaternion toTarget = Quaternion.LookRotation(dir);
 
-			rot = Quaternion.Slerp(rot, toTarget, turningSpeed*Time.deltaTime);
+			//rot = Quaternion.Slerp(rot, toTarget, turningSpeed*Time.deltaTime);
 			Vector3 euler = rot.eulerAngles;
 			euler.z = 0;
 			euler.x = 0;
