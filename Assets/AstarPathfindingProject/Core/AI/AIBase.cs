@@ -681,7 +681,6 @@ namespace Pathfinding {
 
 		protected virtual void Reset () {
 			ResetShape();
-			base.Reset();
 		}
 
 		void ResetShape () {

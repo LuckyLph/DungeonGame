@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-    public class AIController : AIPath
+    public class AIController : AIBase
     {
 
         protected override void Update()
