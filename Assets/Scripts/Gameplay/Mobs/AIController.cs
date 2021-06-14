@@ -42,14 +42,14 @@ public class AIController : MonoBehaviour
     {
         agent.IsEnabled = AgentEnabled;
 
-        if (!agent.isStopped)
+        if (!agent.isStopped && currentMovementVector.normalized != Vector3.zero)
         {
             hasMoved = true;
             animator.SetBool("isWalking", true);
-            animator.SetFloat("inputX", currentMovementVector.x);
-            animator.SetFloat("inputY", currentMovementVector.y);
-            //animator.speed = Mathf.Max(Vector3.Distance(Vector3.zero, currentMovementVector), 0.2f);
-            if ((currentMovementVector.x > 0 && facingRight) || (currentMovementVector.x < 0 && !facingRight))
+            animator.SetFloat("inputX", currentMovementVector.normalized.x);
+            animator.SetFloat("inputY", currentMovementVector.normalized.y);
+            animator.speed = Mathf.Max(Vector3.Distance(Vector3.zero, currentMovementVector.normalized), 0.2f);
+            if ((currentMovementVector.normalized.x > 0 && facingRight) || (currentMovementVector.normalized.x < 0 && !facingRight))
             {
                 Flip();
             }
