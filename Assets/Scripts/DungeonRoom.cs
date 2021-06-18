@@ -8,6 +8,7 @@ public class DungeonRoom
     public Vector2Int Size;
     public bool[] Doors = new bool[4];
     public string Type;
+    public GameObject Instance;
 
     public DungeonRoom()
     {

@@ -160,6 +160,7 @@ public class DungeonGenerator : MonoBehaviour
         GameObject instance = Instantiate(Resources.Load(room.Type, typeof(GameObject))) as GameObject;
         instance.transform.SetParent(gridObject.transform);
         instance.transform.position = GridToWorldSpace(room.Position);
+        room.Instance = instance;
         rooms.Add(room);
         AddRoomToGrid(room);
     }
