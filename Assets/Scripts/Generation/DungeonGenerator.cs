@@ -25,9 +25,10 @@ public class DungeonGenerator : MonoBehaviour
     private GameObject gridObject;
 
     private int[,] grid;
-    private List<DungeonRoom> rooms;
-    private List<RoomType> roomsToPlaceList;
-    private List<DungeonRoom> roomsToClear;
+    private List<DungeonRoom> rooms = new List<DungeonRoom>();
+    private List<DungeonRoom> roomsToClear = new List<DungeonRoom>();
+    private List<RoomType> roomsToPlaceList = new List<RoomType>();
+    
     private HallwayGenerator hallwayGenerator = new HallwayGenerator();
 
     private readonly string DefaultRoom = "DefaultRoom";
@@ -47,24 +48,9 @@ public class DungeonGenerator : MonoBehaviour
 
     private static System.Random rand = new System.Random();
 
-    public int[,] Grid
-    {
-        get => grid;
-        set => grid = value;
-    }
-
-    void Start()
-    {
-        Generate();
-    }
-
     public void Generate()
     {
-        gridObject.ClearChildren();
-        grid = new int[dungeonHeigth, dungeonWidth];
-        rooms = new List<DungeonRoom>();
-        roomsToPlaceList = new List<RoomType>(roomsToPlace);
-        roomsToClear = new List<DungeonRoom>();
+        Init();
         InstantiateRoom(new DungeonRoom(new Vector2Int(41, 45), StartRoomSize, StartRoom));
 
         PlaceRooms();
@@ -155,6 +141,12 @@ public class DungeonGenerator : MonoBehaviour
         }
     }
 
+    private void Init()
+    {
+        gridObject.ClearChildren();
+        grid = new int[dungeonHeigth, dungeonWidth];
+        roomsToPlaceList = roomsToPlace.ToList();
+    }
     void InstantiateRoom(DungeonRoom room)
     {
         GameObject instance = Instantiate(Resources.Load(room.Type, typeof(GameObject))) as GameObject;

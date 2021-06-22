@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "ca.harmony": {
+      "version": "https://gitlab.com/harmony-unity/package.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c43c5ef2e98374b672a867f341d6c2ae20c1d13d"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
