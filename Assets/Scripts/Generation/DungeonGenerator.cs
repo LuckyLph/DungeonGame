@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using System.Linq;
 
 /// <summary>
@@ -12,76 +13,65 @@ using System.Linq;
 /// </summary>
 public class DungeonGenerator : MonoBehaviour
 {
-    [SerializeField]
-    private int dungeonWidth;
-    [SerializeField]
-    private int dungeonHeigth;
-    [SerializeField]
-    private int hallwayWidth;
-    [SerializeField]
-    private RoomType[] roomsToPlace;
+    private static System.Random rand = new System.Random();
 
-    [SerializeField]
-    private GameObject gridObject;
+    public int DungeonWidth { get { return dungeonWidth; } }
+    public int DungeonHeight { get { return dungeonHeigth; } }
+
+    [SerializeField] private int dungeonWidth;
+    [SerializeField] private int dungeonHeigth;
+    [SerializeField] private int marginWidth;
+    [SerializeField] private int hallwayWidth;
+    [SerializeField] private RoomType[] upperLeftRooms;
+    [SerializeField] private RoomType[] upperRightRooms;
+    [SerializeField] private RoomType[] lowerLeftRooms;
+    [SerializeField] private RoomType[] lowerRightRooms;
+
+    [SerializeField] private GameObject gridObject;
 
     private int[,] grid;
     private List<DungeonRoom> rooms = new List<DungeonRoom>();
     private List<DungeonRoom> roomsToClear = new List<DungeonRoom>();
     private List<RoomType> roomsToPlaceList = new List<RoomType>();
-    
-    private HallwayGenerator hallwayGenerator = new HallwayGenerator();
+    private Tilemap outerWall;
 
-    private readonly string DefaultRoom = "DefaultRoom";
-    private readonly string DefaultRoomE = "DefaultRoomE";
-    private readonly string DefaultRoomEW = "DefaultRoomEW";
-    private readonly string DefaultRoomN = "DefaultRoomN";
-    private readonly string DefaultRoomNE = "DefaultRoomNE";
-    private readonly string DefaultRoomNS = "DefaultRoomNS";
-    private readonly string DefaultRoomNW = "DefaultRoomNW";
-    private readonly string DefaultRoomS = "DefaultRoomS";
-    private readonly string DefaultRoomSE = "DefaultRoomSE";
-    private readonly string DefaultRoomSW = "DefaultRoomSW";
-    private readonly string DefaultRoomW = "DefaultRoomW";
-    private readonly string StartRoom = "StartRoom";
     private readonly Vector2Int DefaultRoomSize = new Vector2Int(10, 10);
     private readonly Vector2Int StartRoomSize = new Vector2Int(18, 10);
-
-    private static System.Random rand = new System.Random();
 
     public void Generate()
     {
         Init();
-        InstantiateRoom(new DungeonRoom(new Vector2Int(41, 45), StartRoomSize, StartRoom));
+        InstantiateRoom(new DungeonRoom(new Vector2Int(dungeonWidth / 2 - StartRoomSize.x / 2, dungeonHeigth / 2 - StartRoomSize.y / 2),
+                        StartRoomSize, RoomType.StartRoom));
+        
+        //PlaceRooms();
 
-        PlaceRooms();
-
-        foreach (var i in rooms)
-        {
-            hallwayGenerator.GeneratePath(grid, rooms, i);
-        }
-
-        PrintGrid();
+        //PrintGrid();
     }
 
     void PlaceRooms()
     {
-        roomsToPlaceList = roomsToPlaceList.OrderBy(a => rand.Next()).ToList();
-
-        foreach (var i in roomsToPlaceList)
+        if (upperLeftRooms.Length > 0)
         {
-            if (i == RoomType.DefaultRoom)
+            roomsToPlaceList = upperLeftRooms.ToList();
+            roomsToPlaceList = roomsToPlaceList.OrderBy(a => rand.Next()).ToList();
+
+            foreach (var i in roomsToPlaceList)
             {
-                PlaceRoom(new DungeonRoom(new Vector2Int(0, 0), DefaultRoomSize, DefaultRoom));
+                if (i == RoomType.DefaultRoom)
+                {
+                    PlaceRoom(new DungeonRoom(new Vector2Int(0, 0), DefaultRoomSize, i));
+                }
             }
-        }
-        roomsToClear.Clear();
+            roomsToClear.Clear();
+        } 
     }
 
     bool PlaceRoom(DungeonRoom room)
     {
         for (int i = 0; i < 50; i++)
         {
-            Vector2Int randomPos = new Vector2Int(rand.Next(0, 100), rand.Next(0, 100));
+            Vector2Int randomPos = new Vector2Int(Random.Range(0, dungeonWidth), Random.Range(0, dungeonHeigth));
             room.Position = randomPos;
             if (CheckIfRoomFits(room))
             {
@@ -145,11 +135,10 @@ public class DungeonGenerator : MonoBehaviour
     {
         gridObject.ClearChildren();
         grid = new int[dungeonHeigth, dungeonWidth];
-        roomsToPlaceList = roomsToPlace.ToList();
     }
     void InstantiateRoom(DungeonRoom room)
     {
-        GameObject instance = Instantiate(Resources.Load(room.Type, typeof(GameObject))) as GameObject;
+        GameObject instance = Instantiate(Resources.Load(room.PrefabPath, typeof(GameObject))) as GameObject;
         instance.transform.SetParent(gridObject.transform);
         instance.transform.position = GridToWorldSpace(room.Position);
         room.Instance = instance;
@@ -194,7 +183,7 @@ public class DungeonGenerator : MonoBehaviour
     {
         for (int i = room.Position.y; i < room.Position.y + room.Size.y; i++)
         {
-            for (int j = room.Position.x; j >= room.Position.x - hallwayWidth; j--)
+            for (int j = room.Position.x; j >= room.Position.x - marginWidth; j--)
             {
                 if (j < 0)
                 {
@@ -209,7 +198,7 @@ public class DungeonGenerator : MonoBehaviour
         }
         for (int i = room.Position.y; i < room.Position.y + room.Size.y; i++)
         {
-            for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + hallwayWidth; j++)
+            for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + marginWidth; j++)
             {
                 if (j >= dungeonWidth)
                 {
@@ -222,7 +211,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        for (int i = room.Position.y; i >= room.Position.y - hallwayWidth; i--)
+        for (int i = room.Position.y; i >= room.Position.y - marginWidth; i--)
         {
             for (int j = room.Position.x; j < room.Position.x + room.Size.x; j++)
             {
@@ -237,7 +226,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + hallwayWidth; i++)
+        for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + marginWidth; i++)
         {
             for (int j = room.Position.x; j < room.Position.x + room.Size.x; j++)
             {
@@ -254,11 +243,11 @@ public class DungeonGenerator : MonoBehaviour
         }
 
 
-        if (room.Position.x >= hallwayWidth && room.Position.y >= hallwayWidth)
+        if (room.Position.x >= marginWidth && room.Position.y >= marginWidth)
         {
-            for (int i = room.Position.y - hallwayWidth; i < room.Position.y; i++)
+            for (int i = room.Position.y - marginWidth; i < room.Position.y; i++)
             {
-                for (int j = room.Position.x - hallwayWidth; j < room.Position.x; j++)
+                for (int j = room.Position.x - marginWidth; j < room.Position.x; j++)
                 {
                     if (i < dungeonHeigth && j < dungeonWidth)
                     {
@@ -267,11 +256,11 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        if (room.Position.x < dungeonWidth - hallwayWidth && room.Position.y >= hallwayWidth)
+        if (room.Position.x < dungeonWidth - marginWidth && room.Position.y >= marginWidth)
         {
-            for (int i = room.Position.y - hallwayWidth; i < room.Position.y; i++)
+            for (int i = room.Position.y - marginWidth; i < room.Position.y; i++)
             {
-                for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + hallwayWidth; j++)
+                for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + marginWidth; j++)
                 {
                     if (i < dungeonHeigth && j < dungeonWidth)
                     {
@@ -280,11 +269,11 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        if (room.Position.x < dungeonWidth - hallwayWidth && room.Position.y < dungeonHeigth - hallwayWidth)
+        if (room.Position.x < dungeonWidth - marginWidth && room.Position.y < dungeonHeigth - marginWidth)
         {
-            for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + hallwayWidth; i++)
+            for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + marginWidth; i++)
             {
-                for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + hallwayWidth; j++)
+                for (int j = room.Position.x + room.Size.x; j < room.Position.x + room.Size.x + marginWidth; j++)
                 {
                     if (i < dungeonHeigth && j < dungeonWidth)
                     {
@@ -293,11 +282,11 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-        if (room.Position.x >= hallwayWidth && room.Position.y < dungeonHeigth - hallwayWidth)
+        if (room.Position.x >= marginWidth && room.Position.y < dungeonHeigth - marginWidth)
         {
-            for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + hallwayWidth; i++)
+            for (int i = room.Position.y + room.Size.y; i < room.Position.y + room.Size.y + marginWidth; i++)
             {
-                for (int j = room.Position.x - hallwayWidth; j < room.Position.x; j++)
+                for (int j = room.Position.x - marginWidth; j < room.Position.x; j++)
                 {
                     if (i < dungeonHeigth && j < dungeonWidth)
                     {

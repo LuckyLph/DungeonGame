@@ -7,9 +7,9 @@ public class HallwayGenerator
     private int[,] grid;
     private int[,] roomGrid;
 
-    public void GeneratePath(int[,] grid, List<DungeonRoom> rooms, DungeonRoom roomToConnect)
+    public void GeneratePath(int[,] roomGrid, List<DungeonRoom> rooms, DungeonRoom roomToConnect)
     {
-        roomGrid = grid;
+        this.roomGrid = roomGrid;
 
 
     }

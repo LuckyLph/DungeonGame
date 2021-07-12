@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public delegate void PlayerInteractHandler();
+
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class SimpleCharacterController : MonoBehaviour {
-
+public class SimpleCharacterController : MonoBehaviour
+{
+    public event PlayerInteractHandler OnPlayerInteract;
     public float moveSpeed = 70;
     public float m_MovementSmoothing = 0.1f;
     public GameObject upObject;
@@ -14,21 +17,28 @@ public class SimpleCharacterController : MonoBehaviour {
     public GameObject rightObject;
     public GameObject downObject;
 
-    Rigidbody2D rb;
-    Animator currentAnimator;
+    private Rigidbody2D rb;
+    private Animator currentAnimator;
 
-    enum Direction { Up, Right, Down, Left };
-    enum Expression { Neutral, Angry, Smile, Surprised };
+    private enum Direction { Up, Right, Down, Left };
+    private enum Expression { Neutral, Angry, Smile, Surprised };
 
-    Direction currentDirection;
-    Direction previousDirection;
-    float angle = 180;
-    float speed;
+    private Direction currentDirection;
+    private Direction previousDirection;
+    private float angle = 180;
+    private float speed;
 
-    Vector2 axisVector = Vector2.zero;
-    Vector3 currentVelocity = Vector3.zero;
+    private Vector2 axisVector = Vector2.zero;
+    private Vector3 currentVelocity = Vector3.zero;
 
-    void Start()
+    public List<int> UnlockedKeys { get; set; }
+
+    private void Awake()
+    {
+        UnlockedKeys = new List<int>();
+    }
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         upObject.SetActive(false);
@@ -39,7 +49,7 @@ public class SimpleCharacterController : MonoBehaviour {
         currentAnimator = downObject.GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
 
         // get speed from the rigid body to be used for animator parameter Speed
@@ -158,19 +168,19 @@ public class SimpleCharacterController : MonoBehaviour {
         //}
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         // Move our character
         Move();
     }
 
-    void PlayAnimation(string animationName)
+    private void PlayAnimation(string animationName)
     {
         // Play given animation in the current directions animator
         currentAnimator.Play(animationName, 0);
     }
 
-    void SetExpression(Expression expressionToSet)
+    private void SetExpression(Expression expressionToSet)
     {
         // convert enum to int for the animator paremeter.
         int expressionNumber = (int)expressionToSet;
@@ -183,7 +193,7 @@ public class SimpleCharacterController : MonoBehaviour {
 
     }
 
-    void Move()
+    private void Move()
     {
         // Set target velocity to smooth towards
         Vector2 targetVelocity = new Vector2(axisVector.x * moveSpeed * 10f, axisVector.y * moveSpeed * 10) * Time.fixedDeltaTime;
@@ -195,5 +205,14 @@ public class SimpleCharacterController : MonoBehaviour {
     public void OnMove(InputAction.CallbackContext context)
     {
         axisVector = context.ReadValue<Vector2>();
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Debug.Log("Interaction");
+            OnPlayerInteract?.Invoke();
+        }
     }
 }

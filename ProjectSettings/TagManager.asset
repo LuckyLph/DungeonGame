@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Generator
+  - MainController
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - Collisions
   - Water
   - UI
-  - 
-  - 
+  - Player Collision
+  - Player Sensor
   - 
   - 
   - 

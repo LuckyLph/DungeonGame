@@ -19,6 +19,7 @@ public class AIController : MonoBehaviour
     private Vector3 currentMovementVector;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private StateMachine stateMachine;
     private bool hasMoved;
 
     private void Awake()
