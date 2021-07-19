@@ -29,7 +29,7 @@ public class MainController : MonoBehaviour
 #if UNITY_EDITOR
         isEditor = true;
 #else
-    isEditor = false
+    isEditor = false;
 #endif
         if (!isEditor || SceneManager.sceneCount == 1)
         {
