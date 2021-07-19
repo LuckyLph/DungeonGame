@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     private PlayerSensor doorSensor;
+    private SimpleCharacterController controller;
 
     private void Awake()
     {
@@ -25,16 +26,21 @@ public class DoorController : MonoBehaviour
 
     private void OnPlayerInteract()
     {
-        gameObject.SetActive(false);
+        if (controller.Keys > 0)
+        {
+            gameObject.SetActive(false);
+            controller.Keys--;
+        }
     }
 
     private void OnPlayerSensorEntered(GameObject playerCollider)
     {
-        playerCollider.transform.parent.GetComponent<SimpleCharacterController>().OnPlayerInteract += OnPlayerInteract;
+        controller = playerCollider.transform.parent.GetComponent<SimpleCharacterController>();
+        controller.OnPlayerInteract += OnPlayerInteract;
     }
 
     private void OnPlayerSensorExited(GameObject playerCollider)
     {
-        playerCollider.transform.parent.GetComponent<SimpleCharacterController>().OnPlayerInteract -= OnPlayerInteract;
+        controller.OnPlayerInteract -= OnPlayerInteract;
     }
 }

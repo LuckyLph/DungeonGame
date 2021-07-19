@@ -5,13 +5,12 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private float speed;
-    private bool enabled;
     private GameObject target;
-    public bool Enabled { get { return enabled; } }
+    public bool CameraEnabled { get; set; }
 
     private void Update()
     {
-        if (Enabled)
+        if (CameraEnabled)
         {
             Vector3 nextPosition = Vector3.Lerp(transform.position, target.transform.position, speed * Time.deltaTime);
             transform.position = new Vector3(nextPosition.x, nextPosition.y, Camera.main.transform.position.z);
@@ -21,6 +20,6 @@ public class CameraController : MonoBehaviour
     public void EnableCamera(GameObject target)
     {
         this.target = target;
-        enabled = true;
+        CameraEnabled = true;
     }
 }

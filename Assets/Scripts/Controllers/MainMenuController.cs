@@ -7,9 +7,9 @@ public class MainMenuController : MonoBehaviour
 {
     private GameObject currentlySelected;
 
-    void Start()
+    private void Start()
     {
-        
+        Time.timeScale = 1;
     }
 
     private void Update()

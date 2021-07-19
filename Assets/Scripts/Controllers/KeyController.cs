@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class KeyController : MonoBehaviour
 {
-    public int Index;
-
     private PlayerSensor doorSensor;
 
     private void Awake()
@@ -25,8 +23,7 @@ public class KeyController : MonoBehaviour
 
     private void OnPlayerSensorEntered(GameObject player)
     {
-        player.transform.root.GetComponent<SimpleCharacterController>().UnlockedKeys.Add(Index);
+        player.transform.root.GetComponent<SimpleCharacterController>().Keys++;
         gameObject.SetActive(false);
-        Debug.Log("key added");
     }
 }

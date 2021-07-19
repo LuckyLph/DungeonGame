@@ -15,4 +15,8 @@ MonoBehaviour:
   scenes:
   - sceneAsset: {fileID: 102900000, guid: 6c7d1015b1ba81742abcd43b16271105, type: 3}
     sceneName: Game
+  - sceneAsset: {fileID: 102900000, guid: 05a598f5dc5ca524ba6dd439a6eb3b25, type: 3}
+    sceneName: HUD
+  - sceneAsset: {fileID: 102900000, guid: 89aa6500b6f504741b5afcb8bd3d5c80, type: 3}
+    sceneName: PauseMenu
   setFirstAsActive: 1

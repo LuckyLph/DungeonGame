@@ -8,6 +8,10 @@ public class AIController : MonoBehaviour
     [SerializeField]
     private bool agentEnabled;
 
+    [SerializeField] private int damage;
+
+    private PlayerSensor playerSensor;
+
     public bool AgentEnabled
     {
         get { return agentEnabled; }
@@ -19,29 +23,49 @@ public class AIController : MonoBehaviour
     private Vector3 currentMovementVector;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private StateMachine stateMachine;
     private bool hasMoved;
+    private float switchTime = float.PositiveInfinity;
+    private float damageDelay = 1f;
+    private SimpleCharacterController player;
 
     private void Awake()
     {
         agent = GetComponent<AIPath>();
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        playerSensor = GetComponentInChildren<PlayerSensor>();
     }
 
     private void OnEnable()
     {
         agent.OnAIMove += OnAIMove;
+        playerSensor.OnPlayerSensorEntered += OnPlayerSensorEntered;
+        playerSensor.OnPlayerSensorExited += OnPlayerSensorExited;
     }
 
     private void OnDisable()
     {
         agent.OnAIMove -= OnAIMove;
+        playerSensor.OnPlayerSensorEntered -= OnPlayerSensorEntered;
+        playerSensor.OnPlayerSensorExited -= OnPlayerSensorExited;
     }
 
     void Update()
     {
         agent.IsEnabled = AgentEnabled;
+
+        if (player != null)
+        {
+            if (float.IsPositiveInfinity(switchTime))
+            {
+                switchTime = Time.time + damageDelay;
+            }
+            if (Time.time >= switchTime)
+            {
+                DamagePlayer();
+                switchTime = float.PositiveInfinity;
+            }
+        }
 
         if (!agent.isStopped && currentMovementVector.normalized != Vector3.zero)
         {
@@ -76,8 +100,24 @@ public class AIController : MonoBehaviour
         spriteRenderer.transform.localScale = theScale;
     }
 
+    private void DamagePlayer()
+    {
+        player.GiveDamage(damage);
+    }
+
     public void OnAIMove(Vector3 movement)
     {
         currentMovementVector = movement;
+    }
+
+    private void OnPlayerSensorEntered(GameObject player)
+    {
+        this.player = player.transform.parent.GetComponent<SimpleCharacterController>();
+        DamagePlayer();
+    }
+
+    private void OnPlayerSensorExited(GameObject player)
+    {
+        this.player = null;
     }
 }

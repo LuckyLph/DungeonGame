@@ -123,36 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &480307521
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 480307522}
-  m_Layer: 0
-  m_Name: Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &480307522
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480307521}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.189083, y: 49.243412, z: -93.57507}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1714510807
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -235,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1714510811
 MonoBehaviour:
@@ -261,6 +231,7 @@ GameObject:
   - component: {fileID: 1810242122}
   - component: {fileID: 1810242123}
   - component: {fileID: 1810242124}
+  - component: {fileID: 1810242125}
   m_Layer: 0
   m_Name: Controller
   m_TagString: MainController
@@ -296,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: {fileID: 11400000, guid: 3939fdfa91547fd459047945875b256e, type: 2}
   mainMenu: {fileID: 11400000, guid: 4af7a475fdac12246a65ffeda2b772ae, type: 2}
+  endGame: {fileID: 11400000, guid: 2d5e930f9c7be9e4bb7d725e2908dd72, type: 2}
 --- !u!114 &1810242124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +280,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d07503e2ba84db493ddf3b569a8a334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1810242125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810242121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf0e1ea429a79842929230fc826f409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips: []

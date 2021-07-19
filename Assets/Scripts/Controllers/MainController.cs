@@ -9,8 +9,14 @@ public class MainController : MonoBehaviour
     [Header("Scene Bundles")]
     [SerializeField] private SceneBundle game;
     [SerializeField] private SceneBundle mainMenu;
+    [SerializeField] private SceneBundle endGame;
 
     private SceneBundleLoader loader;
+
+    public bool IsGameWon { get; set; }
+    public int PlayerLives { get; set; }
+    public int PlayerStars { get; set; }
+    public float GameTimer { get; set; }
 
     private void Awake()
     {
@@ -50,10 +56,47 @@ public class MainController : MonoBehaviour
     {
         return loader.Unload(mainMenu);
     }
+    public Coroutine LoadEndGame()
+    {
+        return loader.Load(endGame);
+    }
+
+    public Coroutine UnloadEndGame()
+    {
+        return loader.Unload(endGame);
+    }
 
     public Coroutine SwitchMainMenuToGame()
     {
         UnloadMainMenu();
         return LoadGame();
+    }
+
+    public Coroutine SwitchGameToEndMenu()
+    {
+        UnloadGame();
+        return LoadEndGame();
+    }
+    public Coroutine SwitchGameToMainMenu()
+    {
+        UnloadGame();
+        return LoadMainMenu();
+    }
+
+    public Coroutine ReloadGame()
+    {
+        return loader.Reload(game);
+    }
+
+    public Coroutine SwitchEndMenuToGame()
+    {
+        UnloadEndGame();
+        return LoadGame();
+    }
+
+    public Coroutine SwitchEndMenuToMainMenu()
+    {
+        UnloadEndGame();
+        return LoadMainMenu();
     }
 }

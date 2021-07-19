@@ -31,11 +31,13 @@ public class SimpleCharacterController : MonoBehaviour
     private Vector2 axisVector = Vector2.zero;
     private Vector3 currentVelocity = Vector3.zero;
 
-    public List<int> UnlockedKeys { get; set; }
+    public int Keys { get; set; }
+    public int Stars { get; set; }
+    public int Lives { get; set; }
 
-    private void Awake()
+    public void GiveDamage(int damage)
     {
-        UnlockedKeys = new List<int>();
+        Lives -= damage;
     }
 
     private void Start()
@@ -45,6 +47,9 @@ public class SimpleCharacterController : MonoBehaviour
         leftObject.SetActive(false);
         rightObject.SetActive(false);
         downObject.SetActive(true);
+        Lives = 4;
+        Keys = 0;
+        Stars = 0;
 
         currentAnimator = downObject.GetComponent<Animator>();
     }
@@ -138,7 +143,7 @@ public class SimpleCharacterController : MonoBehaviour
         }
 
         // Set speed parameter to the animator
-        currentAnimator.SetFloat("Speed", speed);
+        currentAnimator.SetFloat("Speed", speed * 1.4f);
 
         // Set current direction as previous
         previousDirection = currentDirection;
@@ -211,8 +216,23 @@ public class SimpleCharacterController : MonoBehaviour
     {
         if (context.started)
         {
-            Debug.Log("Interaction");
             OnPlayerInteract?.Invoke();
+        }
+    }
+
+    public void RemoveLife(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Lives--;
+        }
+    }
+
+    public void AddStar(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Stars++;
         }
     }
 }
